@@ -49,7 +49,13 @@ python ./pose_transform/demo.py \
 ## Virtual try on
 This part base on [cp-vton-plus](https://github.com/minar09/cp-vton-plus). Compared with original model, we add a discriminator to judge whether an image is real or fake to guide Try-On Module (TOM). 
 
-Training your model with:
+Training your GMM model with:
+``` bash
+cd ./virtual_try_on
+python train.py --name GMM --stage GMM --workers 4 --save_count 5000 --shuffle
+```
+Then run test.py for GMM network with the training dataset, which will generate the warped clothes and masks in "warp-cloth" and "warp-mask" folders inside the "./virtual_try_on/result/GMM/train/" directory. Copy the "warp-cloth" and "warp-mask" folders into your data directory, for example inside "./virtual_try_on/data/train" folder.
+And then you can train your TOM model.
 ``` bash
 cd ./virtual_try_on
 python train_gan.py --name TOM --stage TOM --workers 4 --save_count 5000 --shuffle
