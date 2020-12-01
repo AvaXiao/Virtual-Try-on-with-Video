@@ -50,11 +50,6 @@ python ./pose_transform/demo.py \
 This part base on [cp-vton-plus](https://github.com/minar09/cp-vton-plus). Compared with original model, we add a discriminator to judge whether an image is real or fake to guide Try-On Module (TOM). 
 
 Training your model with:
-``` 
-cd ./virtual_try_on
-python train_gan.py --name TOM --stage TOM --workers 4 --save_count 5000 --shuffle
-```
-
 ``` bash
 cd ./virtual_try_on
 python train_gan.py --name TOM --stage TOM --workers 4 --save_count 5000 --shuffle
