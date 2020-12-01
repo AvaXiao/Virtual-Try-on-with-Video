@@ -54,7 +54,12 @@ Training your GMM model with:
 cd ./virtual_try_on
 python train.py --name GMM --stage GMM --workers 4 --save_count 5000 --shuffle
 ```
-Then run test.py for GMM network with the training dataset, which will generate the warped clothes and masks in "warp-cloth" and "warp-mask" folders inside the "./virtual_try_on/result/GMM/train/" directory. Copy the "warp-cloth" and "warp-mask" folders into your data directory, for example inside "./virtual_try_on/data/train" folder.
+Then run `./virtual_try_on/test.py` for GMM network with the training dataset.
+```
+cd ./virtual_try_on
+python test.py --name GMM --stage GMM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/dataset_new/GMM/gmm_final.pth
+```
+This will generate the warped clothes and masks in "warp-cloth" and "warp-mask" folders inside the "./virtual_try_on/result/GMM/train/" directory. Copy the "warp-cloth" and "warp-mask" folders into your data directory, for example inside "./virtual_try_on/data/train" folder.
 And then you can train your TOM model.
 ``` bash
 cd ./virtual_try_on
