@@ -47,7 +47,15 @@ python ./pose_transform/demo.py \
 --test_list=./pose_transform/dataset/danceFashion/val_list.csv
 ```
 ## Virtual try on
-This part base on [cp-vton-plus](https://github.com/minar09/cp-vton-plus). Compared with original model, we add a discriminator to judge whether an image is real or fake to guide Try-On Module (TOM). Try this code:
+This part base on [cp-vton-plus](https://github.com/minar09/cp-vton-plus). Compared with original model, we add a discriminator to judge whether an image is real or fake to guide Try-On Module (TOM). 
+
+Training your model with:
+``` 
+cd ./virtual_try_on
+python train_gan.py --name TOM --stage TOM --workers 4 --save_count 5000 --shuffle
+```
+
+If you want to test the performance of model, try this code:
 ``` bash
 cd ./virtual_try_on
 python test.py --name TOM --stage TOM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/dataset_new/TOM/tom_final.pth
