@@ -8,6 +8,9 @@ This is the [Pose-Guided Person Image Animation](https://github.com/RenYurui/Glo
 
 If you want to generate your owm video, you should extract skeleton from your video with [alpha pose](https://github.com/MVIG-SJTU/AlphaPose) first. We provide `./pose_transform/coco_2_openpose_pose_tansform.py` to tranform the outputs of alpha pose to be openpose format since Motion Extraction Net deals with openpose format skeletons.
 
+You need extract pictures from video and place those images in `./pose_transform/dataset/danceFashion/val_256/train_A`. This command can be useful:
+`ffmpeg -i ./pose_transform/dataset/video/target_pose.mp4 -r 24 -f image2 %5d.png`
+
 The next step is using Motion Extraction Net to preprocess dirty skeletons. Assuming that you want to smooth the skeleton sequences of the fashion data set, you can use the following code:
 ``` bash
 python test.py \
@@ -15,9 +18,9 @@ python test.py \
 --model=keypoint \
 --gpu_id=0 \
 --dataset_mode=keypointtest \
---dataroot=[root path of your dataset] \
+--dataroot=./pose_transform/dataset/danceFashion \
 --sub_dataset=fashionvideo \
---results_dir=[path to save the results] \
+--results_dir=./pose_transform/dataset/danceFashion/val_256/train_video2d \
 --eval_set=val
 ```
 
