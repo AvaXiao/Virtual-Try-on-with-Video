@@ -19,7 +19,7 @@ ffmpeg -f image2 -i ./pose_transform/dataset/danceFashion/val_256/train_A/target
 
 The next step is using Motion Extraction Net to preprocess dirty skeletons. Assuming that you want to smooth the skeleton sequences of the fashion data set, you can use the following code:
 ``` bash
-python test.py \
+python ./pose_transform/test.py \
 --name=dance_keypoint_checkpoints \
 --model=keypoint \
 --gpu_id=0 \
@@ -34,7 +34,7 @@ python test.py \
 
 The last step of pose tranform is generating results. Run following codes:
 ``` bash
-python demo.py \
+python ./pose_transform/demo.py \
 --name=dance_fashion_checkpoints \
 --model=dance \
 --attn_layer=2,3 \
@@ -42,7 +42,13 @@ python demo.py \
 --gpu_id=0 \
 --dataset_mode=dance \
 --sub_dataset=fashion \
---dataroot=./dataset/danceFashion \
+--dataroot=./pose_transform/dataset/danceFashion \
 --results_dir=./demo_results/dance_fashion \
 --test_list=./pose_transform/dataset/danceFashion/val_list.csv
+```
+## Virtual try on
+This part base on [cp-vton-plus](https://github.com/minar09/cp-vton-plus). Compared with original model, we add a discriminator to judge whether an image is real or fake to guide Try-On Module (TOM). Try this code:
+``` bash
+cd ./virtual_try_on
+python test.py --name TOM --stage TOM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/dataset_new/TOM/tom_final.pth
 ```
