@@ -51,12 +51,7 @@ This part base on [cp-vton-plus](https://github.com/minar09/cp-vton-plus). Compa
 
 New dataset can be downloaded from https://drive.google.com/file/d/1Gfut6EYSfkjElBSpGoeWG_LiAg-XeEpE/view?usp=sharing. Please unzip this file and place them in `./virtual_try_on/data/train` folder.
 
-Training your GMM model with:
-``` bash
-cd ./virtual_try_on
-python train.py --name GMM --stage GMM --workers 4 --save_count 5000 --shuffle
-```
-Then run `./virtual_try_on/test.py` for GMM network with the training dataset.
+Then run `./virtual_try_on/test.py` to get other training data for TOM.
 ```
 cd ./virtual_try_on
 python test.py --name GMM --stage GMM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/dataset_new/GMM/gmm_final.pth
