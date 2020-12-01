@@ -53,6 +53,7 @@ Training your model with:
 ``` bash
 cd ./virtual_try_on
 python train_gan.py --name TOM --stage TOM --workers 4 --save_count 5000 --shuffle
+
 #or train with original model
 cd ./virtual_try_on
 python train.py --name TOM --stage TOM --workers 4 --save_count 5000 --shuffle
