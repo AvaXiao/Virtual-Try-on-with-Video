@@ -10,7 +10,11 @@ If you want to generate your owm video, you should extract skeleton from your vi
 
 You need extract pictures from video and place those images in `./pose_transform/dataset/danceFashion/val_256/train_A`. This command can be useful:
 ``` bash
-`ffmpeg -i ./pose_transform/dataset/video/target_pose.mp4 -r 24 -f image2 ./pose_transform/dataset/danceFashion/val_256/train_A/%5d.png`
+ffmpeg -i ./pose_transform/dataset/video/target_pose.mp4 -r 24 -f image2 ./pose_transform/dataset/danceFashion/val_256/train_A/target_pose/%5d.png
+```
+By the way, transform images into video can be implemented with 
+``` bash
+ffmpeg -f image2 -i ./pose_transform/dataset/danceFashion/val_256/train_A/target_pose/%5d.png -vcodec libx264 -r 24 demo_video.mp4
 ```
 
 The next step is using Motion Extraction Net to preprocess dirty skeletons. Assuming that you want to smooth the skeleton sequences of the fashion data set, you can use the following code:
