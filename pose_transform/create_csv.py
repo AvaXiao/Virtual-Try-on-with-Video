@@ -1,7 +1,7 @@
 import os
 
-img_root = '/lab/tmpig23/u/yao_code/Global-Flow-Local-Attention/dataset/danceFashion/val_256/train_A/video'
-save_dir = '/lab/tmpig23/u/yao_code/Global-Flow-Local-Attention/dataset/danceFashion'
+img_root = []
+save_dir = []
 json_root = img_root.replace('train_A', 'train_alphapose')
 clean_json_root = img_root.replace('train_A', 'train_video2d')
 
