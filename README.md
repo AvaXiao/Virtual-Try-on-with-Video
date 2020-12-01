@@ -55,6 +55,14 @@ cd ./virtual_try_on
 python train_gan.py --name TOM --stage TOM --workers 4 --save_count 5000 --shuffle
 ```
 
+``` bash
+cd ./virtual_try_on
+python train_gan.py --name TOM --stage TOM --workers 4 --save_count 5000 --shuffle
+#or train with original model
+cd ./virtual_try_on
+python train.py --name TOM --stage TOM --workers 4 --save_count 5000 --shuffle
+```
+
 If you want to test the performance of model, try this code:
 ``` bash
 cd ./virtual_try_on
