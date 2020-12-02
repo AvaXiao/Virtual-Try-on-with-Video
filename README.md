@@ -46,6 +46,13 @@ python ./pose_transform/demo.py \
 --results_dir=./demo_results/dance_fashion \
 --test_list=./pose_transform/dataset/danceFashion/val_list.csv
 ```
+## Prepare the outcome of pose transform for virtual try on
+1. Run `image_resize.py` to resize the person images from pose transform and your own cloth images to 192*256 and obtain the `test_pairs.txt` for virtual try-on model and `val.txt` for LIP_JPPNet model.
+2. Use person images as input to the LIP_JPPNet model(https://github.com/Engineering-Course/LIP_JPPNet). Run `evaluate_parsing_JPPNet-s2.py` and get the grey scale parsing result from LIP_JPPNet and paste into test data folder.
+3. Use person images as input to the openpose model (https://github.com/CMU-Perceptual-Computing-Lab/openpose). Run `bin\OpenPoseDemo.exe --image_dir testImage\ --write_json jsonResult\ --model_pose COCO --display 0 --render_pose 0` to get the 2d skeleton points json documents from open pose and paste into test data folder. 
+4. Run `dataset_neck_skin_correction.py` to get neck corrected person image parsing. Then Run `body_binary_masking.py` to get person image mask.
+5. Run `cloth_mask.py` to get cloth image binary mask.
+
 ## Virtual try on
 This part base on [cp-vton-plus](https://github.com/minar09/cp-vton-plus). Compared with original model, we add a discriminator to judge whether an image is real or fake to guide Try-On Module (TOM). 
 
@@ -72,3 +79,4 @@ If you want to test the performance of model, try this code:
 cd ./virtual_try_on
 python test.py --name TOM --stage TOM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/dataset_new/TOM/tom_final.pth
 ```
+
