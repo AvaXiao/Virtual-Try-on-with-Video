@@ -73,5 +73,11 @@ cd ./virtual_try_on
 python test.py --name TOM --stage TOM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/dataset_new/TOM/tom_final.pth
 ```
 
-## other resources
+## Related resources
 - [awesome-virtual-try-on](https://github.com/minar09/awesome-virtual-try-on)
+- [awesome-fashion-ai](https://github.com/ayushidalmia/awesome-fashion-ai)
+- [Cool Fashion Papers](https://github.com/lzhbrian/Cool-Fashion-Papers)
+- [Clothes-3D](https://github.com/lzhbrian/Clothes-3D)
+- [Awesome 3D Human](https://github.com/lijiaman/awesome-3d-human)
+- [Awesome 3D reconstruction list](https://github.com/openMVG/awesome_3DReconstruction_list)
+- [Human Body Reconstruction](https://github.com/chenweikai/Body_Reconstruction_References)
