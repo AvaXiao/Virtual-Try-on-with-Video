@@ -74,4 +74,4 @@ python test.py --name TOM --stage TOM --workers 4 --datamode test --data_list te
 ```
 
 ## other resources
-- [A Curated List of Awesome Virtual Try-on (VTON) Research](https://github.com/minar09/awesome-virtual-try-on)
+- [awesome-virtual-try-on](https://github.com/minar09/awesome-virtual-try-on)
