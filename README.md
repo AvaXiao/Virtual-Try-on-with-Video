@@ -72,3 +72,6 @@ If you want to test the performance of model, try this code:
 cd ./virtual_try_on
 python test.py --name TOM --stage TOM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/dataset_new/TOM/tom_final.pth
 ```
+
+## other resources
+- [A Curated List of Awesome Virtual Try-on (VTON) Research](https://github.com/minar09/awesome-virtual-try-on)
