@@ -3,7 +3,7 @@ Traditional virtual try on can only output one picture, in other words, we can o
 
 We developed a virtual try-on system. Besides accepting one cloth image and one target person image, our system also needs a short skeleton video of posing. Then we will generate a video of the target person wearing the target cloth with the same posing. 
 
-The link of final report (Blog): https://sites.google.com/view/virtual-try-on-with-video
+The link of final report (blog): https://sites.google.com/view/virtual-try-on-with-video
 
 ## Pose transform
 This is the [Pose-Guided Person Image Animation](https://github.com/RenYurui/Global-Flow-Local-Attention/blob/master/PERSON_IMAGE_ANIMATION.md) task from [Global-Flow-Local-Attention](https://github.com/RenYurui/Global-Flow-Local-Attention). We use its pretrained model to generate target pose video. The videos we used can be found in `./pose_transform/dataset/video`.
